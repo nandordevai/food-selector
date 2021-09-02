@@ -15,10 +15,6 @@ main {
     text-align: center;
 }
 
-main div, main div * {
-    /* outline: 1px solid #ccc; */
-}
-
 .header {
     width: 65vw;
 }
@@ -53,19 +49,16 @@ main div, main div * {
 }
 
 .reader.active {
-    background: linear-gradient(#000, #ffffff, #000);
+    animation: reader-active 2s linear;
+    background: linear-gradient(hsla(0, 0%, 29%, 1), hsla(0, 0%, 100%, 1), hsla(0, 0%, 29%, 1));
     background-size: 200% 200%;
-    animation: reader-active 2s ease;
 }
 
 @keyframes reader-active {
     0% {
-        background-position: 10% 0%
-    }
-    50% {
-        background-position: 91% 100%
+        background-position: 0% 100%
     }
     100% {
-        background-position: 10% 0%
+        background-position: 0% 0%
     }
 }
