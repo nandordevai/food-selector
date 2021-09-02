@@ -2,10 +2,11 @@ const rows = 8;
 const cols = 8;
 let cells = [];
 let currentAction = null;
+let finished = false;
 
 function initCells() {
     const savedCells = localStorage.getItem('cells');
-    if (savedCells) {
+    if (savedCells && savedCells.length > 0) {
         cells = JSON.parse(savedCells);
     } else {
         const letters = Array.from({ length: cols }, (_, i) => String.fromCharCode(65 + i));
@@ -15,6 +16,7 @@ function initCells() {
             });
         }
         cells.sort(() => Math.random() - 0.5);
+        localStorage.setItem('initialCells', JSON.stringify(cells));
         localStorage.setItem('cells', JSON.stringify(cells));
     }
 }
@@ -22,7 +24,9 @@ function initCells() {
 function showResults() {
     const result = cells.pop();
     if (result === undefined) {
-        // end
+        document.querySelector('.result p').classList.add('hidden');
+        document.querySelector('.result h2').innerHTML = 'No more results';
+        finished = true;
     } else {
         document.querySelector('.result h2').classList.remove('hidden');
         document.querySelector('.result p').innerHTML = result;
@@ -45,9 +49,13 @@ function endAnalizer() {
 document.addEventListener('DOMContentLoaded', () => {
     initCells();
     document.querySelector('.reader').addEventListener('touchstart', () => {
-        startAnalizer();
+        if (!finished) {
+            startAnalizer();
+        }
     });
     document.querySelector('.reader').addEventListener('touchend', () => {
-        endAnalizer();
+        if (!finished) {
+            endAnalizer();
+        }
     });
 });

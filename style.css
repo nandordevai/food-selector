@@ -11,11 +11,12 @@ main {
     align-items: center;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     text-align: center;
 }
 
 .header {
+    margin-bottom: 20px;
+    margin-top: 20px;
     width: 65vw;
 }
 
