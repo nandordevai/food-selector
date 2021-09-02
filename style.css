@@ -44,15 +44,28 @@ main div, main div * {
 }
 
 .reader {
+    background: #fff;
     border: 5px solid #000;
     border-radius: 50%;
     height: 160px;
     padding: 30px;
-    transition: background .2s, filter .2s;
     width: 160px;
 }
 
 .reader.active {
-    background: #ccc;
-    filter: invert(90%);
+    background: linear-gradient(#000, #ffffff, #000);
+    background-size: 200% 200%;
+    animation: reader-active 2s ease;
+}
+
+@keyframes reader-active {
+    0% {
+        background-position: 10% 0%
+    }
+    50% {
+        background-position: 91% 100%
+    }
+    100% {
+        background-position: 10% 0%
+    }
 }

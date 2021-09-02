@@ -34,7 +34,7 @@ function startAnalizer() {
     document.querySelector('.reader').classList.add('active');
     currentAction = window.setTimeout(() => {
         showResults();
-    }, 1000);
+    }, 2000);
 }
 
 function endAnalizer() {
