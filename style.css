@@ -1,0 +1,58 @@
+body {
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 22px;
+    margin: 0;
+    padding: 20px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+}
+
+main {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+}
+
+main div, main div * {
+    /* outline: 1px solid #ccc; */
+}
+
+.header {
+    width: 65vw;
+}
+
+.result {
+    padding-top: 20px;
+}
+
+.result h2 {
+    font-size: 22px;
+    margin: 0;
+    margin-top: 20px;
+    padding: 0;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+.result p {
+    font-size: 80px;
+    margin: 0;
+}
+
+.reader {
+    border: 5px solid #000;
+    border-radius: 50%;
+    height: 160px;
+    padding: 30px;
+    transition: background .2s, filter .2s;
+    width: 160px;
+}
+
+.reader.active {
+    background: #ccc;
+    filter: invert(90%);
+}
