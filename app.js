@@ -19,6 +19,7 @@ function initCells() {
         localStorage.setItem('initialCells', JSON.stringify(cells));
         localStorage.setItem('cells', JSON.stringify(cells));
     }
+    console.log(`Starting: ${cells}`);
 }
 
 function showResults() {
@@ -36,6 +37,7 @@ function showResults() {
             document.querySelector('.result p').innerHTML = '';
         }, 15000);
     }
+    console.log(`Current cells: ${cells}`);
 }
 
 function startAnalizer() {
