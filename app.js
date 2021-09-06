@@ -31,6 +31,10 @@ function showResults() {
         document.querySelector('.result h2').classList.remove('hidden');
         document.querySelector('.result p').innerHTML = result;
         localStorage.setItem('cells', JSON.stringify(cells));
+        window.setTimeout(() => {
+            document.querySelector('.result h2').classList.add('hidden');
+            document.querySelector('.result p').innerHTML = '';
+        }, 15000);
     }
 }
 
