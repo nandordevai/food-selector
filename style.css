@@ -7,8 +7,9 @@ body {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 22px;
     margin: 0;
-    -webkit-touch-callout: none;
+    -webkit-user-drag: none;
     -webkit-user-select: none;
+    user-select: none;
 }
 
 main {
@@ -21,10 +22,10 @@ main {
     width: 100vw;
 }
 
-.header {
+.info {
     margin-bottom: 20px;
     margin-top: 20px;
-    width: 65vw;
+    width: 80vw;
 }
 
 .result {

@@ -25,16 +25,15 @@ function initCells() {
 function showResults() {
     const result = cells.pop();
     if (result === undefined) {
-        document.querySelector('.result p').classList.add('hidden');
+        document.querySelector('.result').classList.add('hidden');
         document.querySelector('.result h2').innerHTML = 'No more results';
         finished = true;
     } else {
-        document.querySelector('.result h2').classList.remove('hidden');
+        document.querySelector('.result').classList.remove('hidden');
         document.querySelector('.result p').innerHTML = result;
         localStorage.setItem('cells', JSON.stringify(cells));
         window.setTimeout(() => {
-            document.querySelector('.result h2').classList.add('hidden');
-            document.querySelector('.result p').innerHTML = '';
+            document.querySelector('.result').classList.add('hidden');
         }, 15000);
     }
     console.log(`Current cells: ${cells}`);
@@ -63,5 +62,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!finished) {
             endAnalizer();
         }
+    });
+    document.querySelector('.reader').addEventListener('touchstart', (e) => {
+        e.preventDefault();
     });
 });
